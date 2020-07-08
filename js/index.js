@@ -52,10 +52,17 @@ bodyText.forEach((item)=> item.addEventListener('copy', ()=> alert('Do not copy'
 let mainTitle = document.querySelector('h1')
 mainTitle.addEventListener('dblclick', (event) => event.target.style.fontSize = "700%")
 
-//9 resize
+// resize
 let homeWindow = document.querySelector('.container p')
 homeWindow.addEventListener('resize', (event) => event.target.style.color = `Red`)
 
+//mouse down
+let sec = new Date()
+let navContainer = document.querySelector('.nav')
+navContainer.addEventListener('mousedown', event => event.target.style.transform = `rotate(${sec.getSeconds()}deg)`)
+
+//mouse up
+navContainer.addEventListener('mouseup', event => event.target.style.transform = `rotate(0deg)`)
 
 //Stop the nav items from refreshing the page
 let navItems = document.querySelectorAll('nav a')
@@ -74,4 +81,3 @@ function ChangeColor(event) {
 //rotate the header 360deg
 gsap.to('img', { duration: 3, rotation: 360 })
 
-//
